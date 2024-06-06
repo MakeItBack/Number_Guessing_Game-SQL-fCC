@@ -64,6 +64,7 @@ PLAY_GAME(){
         PLAY_GAME $NEW_GUESS
 
     else
+        # Winning guess
         # Overwrite best game score (if latest is lower than current or if current is zero) and update in db
         if [[ $BEST_GAME -eq 0 ]]; then
           BEST_GAME=$NUMBER_OF_GUESSES
