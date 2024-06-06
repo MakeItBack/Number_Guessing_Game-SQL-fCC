@@ -58,13 +58,14 @@ PLAY_GAME(){
         read NEW_GUESS
         PLAY_GAME $NEW_GUESS
 
+    # Guess is less than secret number
     elif [[ $GUESS -gt $SECRET_NUMBER  ]]; then
         echo -e "It's lower than that, guess again:"
         read NEW_GUESS
         PLAY_GAME $NEW_GUESS
 
+    # Winning guess
     else
-        # Winning guess
         # Overwrite best game score (if latest is lower than current or if current is zero) and update in db
         if [[ $BEST_GAME -eq 0 ]]; then
           BEST_GAME=$NUMBER_OF_GUESSES
