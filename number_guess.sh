@@ -50,15 +50,15 @@ PLAY_GAME(){
     PLAY_GAME $NEW_GUESS
 
   else
-    # Valid guess
-    # Check the guess against the secret number
+    # Valid guess - check the guess against the secret number
 
+    # Guess is lower than secret number
     if [[ $GUESS -lt $SECRET_NUMBER  ]]; then
         echo -e "It's higher than that, guess again:"
         read NEW_GUESS
         PLAY_GAME $NEW_GUESS
 
-    # Guess is less than secret number
+    # Guess is higher than secret number
     elif [[ $GUESS -gt $SECRET_NUMBER  ]]; then
         echo -e "It's lower than that, guess again:"
         read NEW_GUESS
